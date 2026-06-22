@@ -1,0 +1,30 @@
+[
+  {
+    "theme": "space_routine",
+    "label": "공간·편의시설 칭찬",
+    "color": "#6500c3",
+    "summary": "위워크, 간식, 모니터, 학습 공간 같은 환경 요소에 반응한다.",
+    "planning_use": "초반 후킹은 가능하지만 공간 자랑으로 끝내지 않고 학습 몰입 설계로 연결한다."
+  },
+  {
+    "theme": "series_request",
+    "label": "후속 시리즈 요청",
+    "color": "#3d7c5f",
+    "summary": "인물과 루틴에 정이 붙은 시청자가 다음 회차를 원한다.",
+    "planning_use": "단발 영상보다 시즌제, 후속 예고, 댓글 질문 회수 구조가 필요하다."
+  },
+  {
+    "theme": "developer_interest",
+    "label": "개발자 관심도 증가",
+    "color": "#1c6ca8",
+    "summary": "개발 업무, 학습법, 채용공고 독해처럼 실무 언어에 관심을 보인다.",
+    "planning_use": "실무 문제를 쉽게 번역하는 설명형 세그먼트를 본편 안에 배치한다."
+  },
+  {
+    "theme": "ai_career_anxiety",
+    "label": "AI 시대 개발자 직업 전망 불안",
+    "color": "#a84832",
+    "summary": "AI 때문에 주니어 채용이 줄고 부트캠프 ROI가 낮아질 수 있다는 불안이다.",
+    "planning_use": "시리즈의 가장 강한 감정 후크로 삼되, 공포가 아니라 역량과 학습법으로 답한다."
+  }
+]
