@@ -1,0 +1,38 @@
+[
+  {
+    "video_id": "YT_01",
+    "youtube_id": "Ol7kry_fNsI",
+    "title": "부트캠프 개발자 취준 브이로그 (1)",
+    "url": "https://www.youtube.com/watch?v=Ol7kry_fNsI",
+    "comment_count": 6,
+    "main_signal": "AI 시대 취업 불안, 위워크 학습 경험, 출연자 응원이 함께 나타난다.",
+    "content_implication": "공간의 호감에서 시작해 학습 경험과 인물 서사를 함께 보여준다."
+  },
+  {
+    "video_id": "YT_02",
+    "youtube_id": "qsG1wrObOIk",
+    "title": "부트캠프 개발자 취준 브이로그 (2)",
+    "url": "https://www.youtube.com/watch?v=qsG1wrObOIk",
+    "comment_count": 1,
+    "main_signal": "AI 활용 학습 방향을 부트캠프가 반영해야 한다는 요구가 보인다.",
+    "content_implication": "AI를 위협으로만 다루지 말고 학습 방식의 변화로 설명한다."
+  },
+  {
+    "video_id": "YT_03",
+    "youtube_id": "2RaECY9nBTI",
+    "title": "(대구 사는) 개발자 취준 브이로그",
+    "url": "https://www.youtube.com/watch?v=2RaECY9nBTI",
+    "comment_count": 3,
+    "main_signal": "AI 시대 신입 취업 불안과 지방 학습 수요가 동시에 드러난다.",
+    "content_implication": "비전공·지방·전향 준비자의 현실 질문을 정면으로 다룬다."
+  },
+  {
+    "video_id": "YT_04",
+    "youtube_id": "ufc50Gs6VHg",
+    "title": "백엔드 채용공고 독해법｜토스 Node.js",
+    "url": "https://www.youtube.com/watch?v=ufc50Gs6VHg",
+    "comment_count": 0,
+    "main_signal": "채용공고를 개발자 역량 관점에서 풀어낸 영상이다.",
+    "content_implication": "실무 언어를 쉽게 번역하는 설명형 포맷의 기준으로 둔다."
+  }
+]
