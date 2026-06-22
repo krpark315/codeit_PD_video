@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>코드잇 영상 댓글 분석 웹자료</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./components.css">
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand" aria-label="코드잇 댓글 분석">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Codeit Comment Lab</span>
+        </div>
+        <nav class="nav-links" aria-label="페이지 섹션">
+          <a href="#signals">신호</a>
+          <a href="#source-videos">영상</a>
+          <a href="#keywords">키워드</a>
+          <a href="#videos">영상별 분석</a>
+          <a href="#archive">댓글 원문</a>
+          <a href="#proposal">기획 제안</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <h1>코드잇 댓글은 두 질문으로 모입니다.<br> "응원하고 싶다.","그래서 나는 될까.?"</h1>
+            <p class="hero-copy">
+              코드잇 영상 4개에 남겨진 댓글을 바탕으로, 시청자가 어떤 고민과 기대를 갖고 반응했는지 정리했습니다. 목표는 댓글을 단순 감상평이 아니라 다음 유튜브 시리즈의 출발점으로 읽는 것입니다.
+            </p>
+          </div>
+          <aside class="hero-panel" aria-label="댓글 분석 요약">
+            <div class="hero-panel-head">
+              <strong>댓글 요약 지표</strong>
+              <span>영상별 댓글 반응을 한 화면에서 비교합니다.</span>
+            </div>
+            <div class="hero-panel-body">
+              <div class="metric"><b id="metricVideos">0</b><span>분석 대상 영상</span></div>
+              <div class="metric"><b id="metricComments">0</b><span>확인 댓글</span></div>
+              <div class="metric"><b id="metricThemes">0</b><span>댓글 유형</span></div>
+              <div class="metric"><b id="metricPersonas">0</b><span>연결 페르소나</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div id="status" class="status" role="status" aria-live="polite">데이터를 불러오는 중입니다.</div>
+
+      <section class="section video-embed-section" id="source-videos">
+        <div class="section-header">
+          <div>
+            <h2>분석한 영상</h2>
+          </div>
+          <p class="section-note">
+            썸네일을 클릭하면 유튜브 원본 영상으로 이동합니다.
+          </p>
+        </div>
+        <div class="video-embed-grid" id="sourceVideoGrid"></div>
+      </section>
+
+      <section class="section" id="signals">
+        <div class="section-header">
+          <div>
+            <h2>반복되는 댓글 신호</h2>
+          </div>
+          <p class="section-note">
+            댓글 유형은 공간과 루틴의 매력, 후속 시리즈 요청, 개발자 학습 관심, AI 시대 취업 불안으로 묶입니다. 특히 AI와 취업 전망에 대한 질문은 다음 콘텐츠에서 분명히 답해야 할 고민으로
+            보입니다.
+          </p>
+        </div>
+        <div class="analysis-grid">
+          <section class="chart-panel" aria-labelledby="themeChartTitle">
+            <h3 id="themeChartTitle">댓글 유형 분포</h3>
+            <div class="bar-list" id="themeBars"></div>
+          </section>
+          <aside class="note-panel">
+            <h3>해석</h3>
+            <p>
+              공간 칭찬은 진입 장벽을 낮추는 상단 후크이고, AI 취업 불안은 의사결정 장벽입니다. 다음 영상은 공간의 호감에서 시작해 학습 경험과 강의 설계의 디테일로 이동해야 합니다.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="keywords">
+        <div class="section-header">
+          <div>
+            <h2>댓글 키워드와 페르소나</h2>
+          </div>
+          <p class="section-note">
+            반복되는 단어는 시청자가 기대하는 장면을 알려줍니다. AI, 취업, 지방, 위워크, 응원 같은 단어가 다음 시리즈의 후킹 포인트가 됩니다.
+          </p>
+        </div>
+        <div class="analysis-grid">
+          <section class="chart-panel" aria-labelledby="keywordTitle">
+            <h3 id="keywordTitle">상위 키워드</h3>
+            <div class="keyword-cloud" id="keywordCloud"></div>
+          </section>
+          <section class="chart-panel" aria-labelledby="personaTitle">
+            <h3 id="personaTitle">페르소나별 댓글 수</h3>
+            <div class="bar-list" id="personaBars"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" id="videos">
+        <div class="section-header">
+          <div>
+            <h2>영상별 댓글 분석</h2>
+          </div>
+          <p class="section-note">
+            영상마다 댓글의 역할이 다릅니다. 브이로그는 감정과 공간을 만들고, 채용공고 독해법은 기술을 사람 중심 문제 해결로 번역하는 신호를 줍니다.
+          </p>
+        </div>
+        <div class="video-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>영상</th>
+                <th>댓글 수</th>
+                <th>주요 신호</th>
+                <th>기획 함의</th>
+              </tr>
+            </thead>
+            <tbody id="videoRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="archive">
+        <div class="section-header">
+          <div>
+            <h2>댓글 원문 아카이브</h2>
+          </div>
+          <div class="control-row">
+            <select class="select" id="videoFilter" aria-label="영상 필터"></select>
+            <select class="select" id="sortSelect" aria-label="댓글 정렬">
+              <option value="theme">유형순</option>
+              <option value="video">영상순</option>
+              <option value="like">공감순</option>
+            </select>
+          </div>
+        </div>
+        <div class="theme-tabs" id="themeTabs" aria-label="댓글 유형 필터"></div>
+        <div class="comment-grid" id="commentGrid" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="section" id="proposal">
+        <div class="section-header">
+          <div>
+            <h2>콘텐츠 기획 제안</h2>
+          </div>
+          <p class="section-note">
+            분석 결론은 코드잇 과제의 목표인 강의 퀄리티, 학습 경험, 교육 진정성의 인지로 연결되어야 합니다. 전환 유도보다 먼저 신뢰 회복과 인식 형성이 필요합니다.
+          </p>
+        </div>
+        <div class="recommend-grid">
+          <article class="recommend">
+            <h3>AI 불안을 검증 질문으로</h3>
+            <p>“AI가 다 한다는데 왜 아직 강의에 집착하는가”를 도입 질문으로 두고, 답은 코드잇의 학습 설계와 실무 역량으로 제시합니다.</p>
+          </article>
+          <article class="recommend">
+            <h3>공간 호감에서 학습 경험으로</h3>
+            <p>위워크와 루틴의 매력은 초반 진입 장치로 쓰고, 중반부터는 질문 문화, 멘토링, 실습 구조가 한 사람을 끝까지 가게 만드는 장면으로 이동합니다.</p>
+          </article>
+          <article class="recommend">
+            <h3>후속 요청을 시즌 구조로</h3>
+            <p>댓글의 응원과 후속 요청을 본편, 쇼츠, 다음 회차 예고, 댓글 질문 회수로 연결해 단발 영상이 아니라 반복 가능한 시리즈로 설계합니다.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      출처:
+      <a href="https://www.youtube.com/watch?v=Ol7kry_fNsI" target="_blank" rel="noreferrer">부트캠프 개발자 취준 브이로그 (1)</a>
+      · <a href="https://www.youtube.com/watch?v=qsG1wrObOIk" target="_blank" rel="noreferrer">부트캠프 개발자 취준 브이로그 (2)</a>
+      · <a href="https://www.youtube.com/watch?v=2RaECY9nBTI" target="_blank" rel="noreferrer">(대구 사는) 개발자 취준 브이로그</a>
+      · <a href="https://www.youtube.com/watch?v=ufc50Gs6VHg" target="_blank" rel="noreferrer">백엔드 채용공고 독해법｜토스
+        Node.js</a>
+    </footer>
+  </div>
+
+  <script src="./data-inline.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
